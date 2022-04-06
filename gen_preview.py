@@ -20,8 +20,8 @@ headers["Cookie"] = "sessionid=0euy66p53hpyy8npajc2bb81t92reut6"
 for file in req_dic:
     page = url + req_dic[file]
     resp = requests.get(page, headers=headers).content.decode("utf-8")
-    resp = resp.replace("accounts/login", "login.html")
-    resp = resp.replace("accounts/signup", "signup.html")
+    resp = resp.replace("/accounts/login", "login.html")
+    resp = resp.replace("/accounts/signup", "signup.html")
     resp = resp.replace("/profile\"", "profile.html\"")
     resp = resp.replace("\"/static", "\"static")
     resp = resp.replace("\"/\"", "\"index.html\"")
