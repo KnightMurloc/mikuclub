@@ -29,6 +29,9 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         },
     )
     email = models.EmailField("email address", blank=False)
+
+    avatar = models.ImageField(upload_to="avatars/", blank=True)
+
     is_staff = models.BooleanField(
         default=False,
         help_text="Designates whether the user can log into this admin site.",
@@ -59,6 +62,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Send an email to this user."""
         send_mail(subject, message, from_email, [self.email], **kwargs)
+
+
 
 # class CustomUser(AbstractUser):
 #     pass
