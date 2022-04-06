@@ -5,6 +5,7 @@ from requests.structures import CaseInsensitiveDict
 url = "http://127.0.0.1:8000"
 
 shutil.copytree("static", "docs/static",dirs_exist_ok=True)
+shutil.copytree("media/avatars", "docs/static/avatars",dirs_exist_ok=True)
 
 req_dic = {
     "index.html": "/",
